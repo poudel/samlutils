@@ -6,10 +6,13 @@
 package main
 
 import (
-    "github.com/poudel/samlutils"
+	"fmt"
+	"github.com/poudel/samlutils"
 )
 
-m := ParseIdpMetadata(metadata_string)
-fmt.Println("Valid: %q", m.IsValid())
-fmt.Println("Metadata: %q", m)
+func main() {
+	m := samlutils.ParseIdpMetadata(samlutils.EXAMPLE_OKTA_METADATA)
+	fmt.Println("Valid:", m.IsValid())
+	fmt.Println("Metadata:", m)
+}
 ```
